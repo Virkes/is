@@ -1,0 +1,89 @@
+CREATE DATABASE sz;
+
+CREATE TABLE Mjesto
+(
+  id INT NOT NULL,
+  naziv VARCHAR(20) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE Skloniste
+(
+  id INT NOT NULL,
+  naziv VARCHAR(60) NOT NULL,
+  adresa VARCHAR(50) NOT NULL,
+  id_mjesta INT NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (id_mjesta) REFERENCES Mjesto(id)
+);
+
+CREATE TABLE Stanje_zivotinje
+(
+  stanje VARCHAR(20) NOT NULL,
+  id INT NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE Zivotinja
+(
+  broj_cipa INT NOT NULL,
+  vrsta VARCHAR(20) NOT NULL,
+  spol CHAR(1) NOT NULL,
+  datum_rodenja DATE NOT NULL,
+  pasmina VARCHAR(30) NOT NULL,
+  id_sklonista INT NOT NULL,
+  id_stanja INT NOT NULL,
+  PRIMARY KEY (broj_cipa),
+  FOREIGN KEY (id_sklonista) REFERENCES Skloniste(id),
+  FOREIGN KEY (id_stanja) REFERENCES Stanje_zivotinje(id)
+);
+
+CREATE TABLE Osoba
+(
+  jmgb CHAR(13) NOT NULL,
+  ime VARCHAR(20) NOT NULL,
+  prezime VARCHAR(20) NOT NULL,
+  adresa VARCHAR(100) NOT NULL,
+  radni_odnos VARCHAR(30) NOT NULL,
+  id_sklonista INT NOT NULL,
+  PRIMARY KEY (jmgb),
+  FOREIGN KEY (id_sklonista) REFERENCES Skloniste(id)
+);
+
+CREATE TABLE Roba
+(
+  id INT NOT NULL,
+  naziv VARCHAR(50) NOT NULL,
+  oznaka VARCHAR(10) NOT NULL,
+  id_sklonista INT NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (id_sklonista) REFERENCES Skloniste(id)
+);
+
+CREATE TABLE Narudzba
+(
+  id INT NOT NULL,
+  kolicina INT NOT NULL,
+  vrijeme_isporuke DATE NOT NULL,
+  id_robe INT NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (id_robe) REFERENCES Roba(id)
+);
+
+CREATE TABLE Preporuka
+(
+  biljeska VARCHAR(100) NOT NULL,
+  id INT NOT NULL,
+  id_stanja INT NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (id_stanja) REFERENCES Stanje_zivotinje(id)
+);
+
+CREATE TABLE izdao
+(
+  jmgb CHAR(13) NOT NULL,
+  id_preporuke INT NOT NULL,
+  PRIMARY KEY (jmgb, id_preporuke),
+  FOREIGN KEY (jmgb) REFERENCES Osoba(jmgb),
+  FOREIGN KEY (id_preporuke) REFERENCES Preporuka(id)
+);

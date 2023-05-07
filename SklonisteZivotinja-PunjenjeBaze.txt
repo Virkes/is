@@ -1,0 +1,51 @@
+INSERT INTO mjesto VALUES(1, 'Zagreb');
+INSERT INTO mjesto VALUES(2, 'Dubrovnik');
+INSERT INTO mjesto VALUES(3, 'Split');
+INSERT INTO mjesto VALUES(4, 'Osijek');
+INSERT INTO mjesto VALUES(5, 'Varždin');
+
+INSERT INTO skloniste VALUES(1, 'Naše malo sklonište', 'Ulica Ivana Mažururanića 2', 1);
+INSERT INTO skloniste VALUES(2, 'Veliko sklonište', 'Ulica Crvenog križa', 2);
+
+INSERT INTO stanje_zivotinje VALUES('Buhe', 1);
+INSERT INTO stanje_zivotinje VALUES('Zdrav', 2);
+INSERT INTO stanje_zivotinje VALUES('Ozlijeđen', 3);
+INSERT INTO stanje_zivotinje VALUES('Teško ozlijeđen', 4);
+INSERT INTO stanje_zivotinje VALUES('Opasan', 5);
+
+INSERT INTO zivotinja VALUES(296, 'mačka', 'F', '2016-12-18', 'Birtman', 1, 1);
+INSERT INTO zivotinja VALUES(275, 'pas', 'F', '2018-10-10', 'dalamtiner', 1, 2);
+INSERT INTO zivotinja VALUES(342, 'jelen', 'M', '2015-04-12', 'lopatar', 1, 3);
+INSERT INTO zivotinja VALUES(481, 'zec', 'M', '2020-11-11', 'european', 1, 4);
+INSERT INTO zivotinja VALUES(505, 'vuk', 'F', '2021-05-15', 'sivi', 1, 5);
+
+INSERT INTO preporuka VALUES('Potrebno kupanje šamponom protiv buha', 1, 1);
+INSERT INTO preporuka VALUES('Mačka je spremna za udomljavanje', 2, 2);
+INSERT INTO preporuka VALUES('Zadržati na promatranju dok se ne navikne na hodanje s jednim rogom', 3, 3);
+INSERT INTO preporuka VALUES('Nakon tjedan dana hranjenja moguće puštanje u divljinu', 4, 4);
+INSERT INTO preporuka VALUES('Kontaktirati vlasti. Doznati je li ga potrebno uspavati.', 5, 5);
+
+INSERT INTO osoba VALUES('3421654511235', 'Ivo', 'Ivić', 'Zagrebačka 13, Zadar', 'Veterinarski tehničar', 1);
+INSERT INTO osoba VALUES('4651548154548', 'Ana', 'Anić', 'Ulica crvenog križa 16, Dubrovnik', 'Veterinar', 1);
+INSERT INTO osoba VALUES('4846550584845', 'Hrvoje', 'Hrast', 'Radnička 33, Zagreb', 'Volonter', 1);
+INSERT INTO osoba VALUES('6846446864546', 'Mario', 'Marić', 'Trg velikana 1, Split', 'Veterinar', 1);
+INSERT INTO osoba VALUES('8484554846135', 'Valentina', 'Horvat', 'Misna ulica, Varaždin', 'Volonter', 1);
+
+INSERT INTO izdao VALUES('4651548154548', 1);
+INSERT INTO izdao VALUES('6846446864546', 2);
+INSERT INTO izdao VALUES('4651548154548', 3);
+INSERT INTO izdao VALUES('6846446864546', 4);
+INSERT INTO izdao VALUES('4651548154548', 5);
+
+INSERT INTO roba VALUES(1, 'Cijepivo protiv bjesnoće', 'BJ-047', 1);
+INSERT INTO roba VALUES(2, 'Cijepivo protiv zaraznih bolesti', 'HO-78', 1);
+INSERT INTO roba VALUES(3, 'Tablete protiv nametnika', '0796', 1);
+INSERT INTO roba VALUES(4, 'Hrana za ptice', 'HPL', 1);
+INSERT INTO roba VALUES(5, 'Konac', 'I-41', 1);
+
+INSERT INTO narudzba VALUES(1, 5, '2023-04-10', 2);
+INSERT INTO narudzba VALUES(2, 5, '2023-04-12', 3);
+INSERT INTO narudzba VALUES(3, 10, '2023-04-20', 5);
+INSERT INTO narudzba VALUES(4, 8, '2023-04-23', 1);
+INSERT INTO narudzba VALUES(5, 20, '2023-05-01', 4);
+
