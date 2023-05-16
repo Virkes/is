@@ -34,7 +34,7 @@ CREATE TABLE Zivotinja
   id_sklonista INT NOT NULL,
   id_stanja INT NOT NULL,
   PRIMARY KEY (broj_cipa),
-  FOREIGN KEY (id_sklonista) REFERENCES Skloniste(id),
+  FOREIGN KEY (id_sklonista) REFERENCES Skloniste(id) ON DELETE CASCADE,
   FOREIGN KEY (id_stanja) REFERENCES Stanje_zivotinje(id)
 );
 
