@@ -4,8 +4,8 @@ INSERT INTO mjesto VALUES(3, 'Split');
 INSERT INTO mjesto VALUES(4, 'Osijek');
 INSERT INTO mjesto VALUES(5, 'Varždin');
 
-INSERT INTO skloniste VALUES(1, 'Naše malo sklonište', 'Ulica Ivana Mažururanića 2', 1);
-INSERT INTO skloniste VALUES(2, 'Veliko sklonište', 'Ulica Crvenog križa', 2);
+INSERT INTO skloniste(naziv, adresa, id_mjesta) VALUES('Naše malo sklonište', 'Ulica Ivana Mažururanića 2', 1);
+INSERT INTO skloniste(naziv, adresa, id_mjesta) VALUES('Veliko sklonište', 'Ulica Crvenog križa', 2);
 
 INSERT INTO stanje_zivotinje VALUES('Buhe', 1);
 INSERT INTO stanje_zivotinje VALUES('Zdrav', 2);

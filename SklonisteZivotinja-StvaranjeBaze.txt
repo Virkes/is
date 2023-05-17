@@ -9,12 +9,12 @@ CREATE TABLE Mjesto
 
 CREATE TABLE Skloniste
 (
-  id INT NOT NULL,
+  id integer NOT NULL GENERATED ALWAYS AS IDENTITY,
   naziv VARCHAR(60) NOT NULL,
   adresa VARCHAR(50) NOT NULL,
   id_mjesta INT NOT NULL,
-  PRIMARY KEY (id),
-  FOREIGN KEY (id_mjesta) REFERENCES Mjesto(id)
+  FOREIGN KEY (id_mjesta) REFERENCES Mjesto(id),
+  PRIMARY KEY (id)
 );
 
 CREATE TABLE Stanje_zivotinje
