@@ -1,0 +1,227 @@
+:root {
+  --white: #ffffff;
+  --middle: #1e90ff;
+  --light: #c0d4e6;
+  --dark: #052d5e;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+button {
+  background: var(--light);
+  border: 2px solid var(--dark);
+  border-radius: 7px;
+  padding: 4px 8px;
+  font-size: 15px;
+}
+
+button:hover {
+  background: var(--dark);
+  color: var(--white);
+  cursor: pointer;
+}
+
+p {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--dark);
+  margin: 15px 0;
+}
+
+#root {
+  margin: 0 10px;
+}
+
+.singleShelter,
+.singleDetail {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  font-size: 20px;
+  margin-bottom: 20px;
+  border-bottom: 4px solid var(--middle);
+}
+
+.shelterName {
+  width: 30%;
+}
+
+.shelterAddress {
+  width: 40%;
+}
+
+.shelterTownContainer {
+  width: 10%;
+}
+
+.actionBtnsContainer {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--light);
+  padding: 15px;
+}
+
+.navList a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: bold;
+}
+
+.navList a {
+  padding: 3px 30px;
+  background-color: var(--middle);
+  border-radius: 10px;
+}
+
+.navList a.active,
+a:hover {
+  color: var(--white);
+  background-color: var(--dark);
+}
+
+.newShelterFormContainer,
+.editShelterFormContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.newShelterForm,
+.editShelterForm {
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 20px;
+}
+
+.formActionBtns {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.newShelterForm label,
+.editShelterForm label {
+  width: 33%;
+  display: flex;
+}
+
+.newShelterForm input,
+.newShelterForm select,
+.editShelterForm input,
+.editShelterForm select {
+  margin-left: 10px;
+  border: 2px solid var(--dark);
+  border-radius: 7px;
+  font-size: 17px;
+  width: 48%;
+}
+
+.singleDetail div {
+  width: 14%;
+}
+
+.navList li {
+  font-size: 22px;
+}
+
+.addNewShelterContainer {
+  text-align: right;
+}
+
+.prevNextBtns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.newAnimalBtnContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.editDetailForm {
+  width: 90%;
+  display: flex;
+}
+
+.editDetailForm input,
+.editDetailForm select {
+  margin-left: 10px;
+  border: 2px solid var(--dark);
+  border-radius: 7px;
+  font-size: 16px;
+  width: 50%;
+}
+
+.datumRodenja {
+  width: 20%;
+}
+
+.stanje {
+  width: 22%;
+}
+
+.cip {
+  width: 13%;
+}
+
+.vrsta {
+  width: 15%;
+}
+
+.pasmina {
+  width: 15%;
+}
+
+.spol {
+  width: 10%;
+}
+
+.stateContainer {
+  font-size: 24px;
+}
+
+.stateRow {
+  display: flex;
+  justify-content: center;
+  border-bottom: 5px solid var(--middle);
+  margin: 0 200px 20px;
+}
+
+.stateID {
+  width: 5%;
+}
+
+.stateName {
+  width: 15%;
+}
+
+.newAnimalBtnContainer {
+  margin-bottom: 10px;
+}
+
+.searcher {
+  width: 25%;
+}
