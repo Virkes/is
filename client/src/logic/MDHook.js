@@ -289,6 +289,9 @@ const MDHook = () => {
     if (detail.broj_cipa === "") {
       alert("Morate unijeti broj čipa");
       retValue = false;
+    } else if (!Number.isInteger(parseInt(detail.broj_cipa))) {
+      alert("Broj čipa mora biti cijeli broj");
+      retValue = false;
     } else if (detail.vrsta === "") {
       alert("Morate unijeti vrstu");
       retValue = false;
