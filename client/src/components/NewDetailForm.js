@@ -19,7 +19,7 @@ function NewDetailForm(props) {
   return (
     <div className="editShelterFormContainer">
       <form className="editDetailForm">
-        <label className="cip">
+        <label className="">
           Broj čipa
           <input
             type="number"
@@ -27,7 +27,7 @@ function NewDetailForm(props) {
             onChange={(e) => setBrojCipa(e.target.value)}
           />
         </label>
-        <label className="vrsta">
+        <label className="">
           Vrsta
           <input
             type="text"
@@ -35,15 +35,15 @@ function NewDetailForm(props) {
             onChange={(e) => setVrsta(e.target.value)}
           />
         </label>
-        <label className="pasmina">
-          Psmina
+        <label className="">
+          Pasmina
           <input
             type="text"
             value={pasmina}
             onChange={(e) => setPasmina(e.target.value)}
           />
         </label>
-        <label className="spol">
+        <label className="">
           Spol
           <input
             type="text"
@@ -51,7 +51,7 @@ function NewDetailForm(props) {
             onChange={(e) => setSpol(e.target.value)}
           />
         </label>
-        <label className="stanje">
+        <label className="">
           Stanje
           <select value={stanje} onChange={(e) => setStanje(e.target.value)}>
             <option key={0} value={0}>
@@ -64,8 +64,8 @@ function NewDetailForm(props) {
             ))}
           </select>
         </label>
-        <label className="datumRodenja">
-          Datum rođenja
+        <label className="">
+          Datum
           <input
             type="text"
             value={datum_rodenja}

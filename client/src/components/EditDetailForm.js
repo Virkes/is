@@ -30,14 +30,6 @@ function EditDetailForm(props) {
     <div className="editShelterFormContainer">
       <form className="editDetailForm">
         <label>
-          Broj čipa
-          <input
-            type="text"
-            value={brojCipa}
-            onChange={(e) => setBrojCipa(e.target.value)}
-          />
-        </label>
-        <label>
           Vrsta
           <input
             type="text"
@@ -46,7 +38,7 @@ function EditDetailForm(props) {
           />
         </label>
         <label>
-          Psmina
+          Pasmina
           <input
             type="text"
             value={pasmina}

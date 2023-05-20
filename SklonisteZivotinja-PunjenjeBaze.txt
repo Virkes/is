@@ -6,6 +6,7 @@ INSERT INTO mjesto VALUES(5, 'Varaždin');
 
 INSERT INTO skloniste(naziv, adresa, id_mjesta) VALUES('Naše malo sklonište', 'Ulica Ivana Mažururanića 2', 1);
 INSERT INTO skloniste(naziv, adresa, id_mjesta) VALUES('Veliko sklonište', 'Ulica Crvenog križa', 2);
+INSERT INTO skloniste(naziv, adresa, id_mjesta) VALUES('Sklonište za pse', 'Bićanićeva ulica 36', 3);
 
 INSERT INTO stanje_zivotinje VALUES('Buhe', 1);
 INSERT INTO stanje_zivotinje VALUES('Zdrav', 2);
@@ -14,7 +15,9 @@ INSERT INTO stanje_zivotinje VALUES('Teško ozlijeđen', 4);
 INSERT INTO stanje_zivotinje VALUES('Opasan', 5);
 
 INSERT INTO zivotinja VALUES(296, 'mačka', 'F', '2016-12-18', 'Birtman', 1, 1);
-INSERT INTO zivotinja VALUES(275, 'pas', 'F', '2018-10-10', 'dalamtiner', 1, 2);
+INSERT INTO zivotinja VALUES(275, 'pas', 'F', '2018-10-10', 'dalamtiner', 3, 7);
+INSERT INTO zivotinja VALUES(275, 'pas', 'M', '2023-12-10', 'bulldog', 3, 8);
+INSERT INTO zivotinja VALUES(275, 'pas', 'M', '2022-10-14', 'labrador', 3, 2);
 INSERT INTO zivotinja VALUES(342, 'jelen', 'M', '2015-04-12', 'lopatar', 1, 3);
 INSERT INTO zivotinja VALUES(481, 'zec', 'M', '2020-11-11', 'european', 1, 4);
 INSERT INTO zivotinja VALUES(505, 'vuk', 'F', '2021-05-15', 'sivi', 1, 5);

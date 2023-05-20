@@ -62,7 +62,7 @@ const ShelterHook = () => {
             setShelters([]);
           });
         })
-        .catch((error) => console.log(error));
+        .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
     }
   };
 
@@ -78,7 +78,7 @@ const ShelterHook = () => {
           setShelters(data);
         });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
   }, [deleted, newData]);
 
   const openEditShelterForm = (id) => {
@@ -103,10 +103,12 @@ const ShelterHook = () => {
                 setEditFormIsOpen(true);
               });
             })
-            .catch((error) => console.log(error));
+            .catch((error) =>
+              alert("Došlo je do pogreške pri obradi zahtjeva")
+            );
         });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
   };
 
   const closeForm = () => {
@@ -128,7 +130,7 @@ const ShelterHook = () => {
           closeForm();
         });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
   };
 
   const abortEditShelter = () => {
@@ -149,7 +151,7 @@ const ShelterHook = () => {
           setNewData(!newData);
         });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
   };
 
   const openForm = () => {
@@ -165,7 +167,7 @@ const ShelterHook = () => {
           setFormIsOpen(true);
         });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
   };
 
   const abortNewShelter = (closeForm) => {

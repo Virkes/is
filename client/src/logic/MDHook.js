@@ -59,13 +59,17 @@ const MDHook = () => {
                       setShelters(data);
                     });
                   })
-                  .catch((error) => console.log(error));
+                  .catch((error) =>
+                    alert("Došlo je do pogreške pri obradi zahtjeva")
+                  );
               });
             })
-            .catch((error) => console.log(error));
+            .catch((error) =>
+              alert("Došlo je do pogreške pri obradi zahtjeva")
+            );
         });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
   }, [updated, deleted]);
 
   const editMaster = (shelter) => {
@@ -82,7 +86,7 @@ const MDHook = () => {
           closeForm();
         });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
   };
 
   const openEditMasterForm = () => {
@@ -98,7 +102,7 @@ const MDHook = () => {
           setEditFormIsOpen(true);
         });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
   };
 
   const closeForm = () => {
@@ -118,7 +122,7 @@ const MDHook = () => {
           console.log(data);
         });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
   };
 
   const addNewDetail = (detail) => {
@@ -138,7 +142,7 @@ const MDHook = () => {
           setNewDetailFormIsOpen(false);
         });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
   };
 
   const abortEditShelter = () => {
@@ -166,7 +170,7 @@ const MDHook = () => {
           closeForm();
         });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
   };
 
   const openEditDetailForm = (id) => {
@@ -191,10 +195,12 @@ const MDHook = () => {
                 setEditDetailFormIsOpen(true);
               });
             })
-            .catch((error) => console.log(error));
+            .catch((error) =>
+              alert("Došlo je do pogreške pri obradi zahtjeva")
+            );
         });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
   };
 
   const editDetail = (detail) => {
@@ -211,7 +217,7 @@ const MDHook = () => {
           setUpdated(!updated);
         });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
   };
 
   const deleteDetail = (id) => {
@@ -227,7 +233,7 @@ const MDHook = () => {
             setDeleted(!deleted);
           });
         })
-        .catch((error) => console.log(error));
+        .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
     }
   };
 
@@ -244,7 +250,7 @@ const MDHook = () => {
           setNewDetailFormIsOpen(true);
         });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
   };
 
   function calculateID(currentID, down) {

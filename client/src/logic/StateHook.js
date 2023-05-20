@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const StateHook = () => {
   const [states, setStates] = useState();
@@ -10,11 +9,13 @@ const StateHook = () => {
       headers: {
         "Content-Type": "application/json",
       },
-    }).then((response) => {
-      response.json().then((data) => {
-        setStates(data);
-      });
-    });
+    })
+      .then((response) => {
+        response.json().then((data) => {
+          setStates(data);
+        });
+      })
+      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
   }, []);
   return {
     states,
