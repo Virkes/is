@@ -117,41 +117,60 @@ const ShelterHook = () => {
   };
 
   const addNewShelter = (shelter) => {
-    fetch("http://127.0.0.1:5000/skloniste", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(shelter),
-    })
-      .then((response) => {
-        response.json().then(() => {
-          setNewData(!newData);
-          closeForm();
-        });
+    if (checkValidation(shelter)) {
+      fetch("http://127.0.0.1:5000/skloniste", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(shelter),
       })
-      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
+        .then((response) => {
+          response.json().then(() => {
+            setNewData(!newData);
+            closeForm();
+          });
+        })
+        .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
+    }
   };
+
+  function checkValidation(shelter) {
+    let retValue = true;
+    if (shelter.naziv === "") {
+      alert("Morate unijeti naziv");
+      retValue = false;
+    } else if (shelter.adresa === "") {
+      alert("Morate unijeti adresu");
+      retValue = false;
+    } else if (shelter.id_mjesta === "") {
+      alert("Morate odabrati mjesto");
+      retValue = false;
+    }
+    return retValue;
+  }
 
   const abortEditShelter = () => {
     closeForm();
   };
 
   const editShelter = (shelter) => {
-    fetch("http://127.0.0.1:5000/skloniste/" + shelter.id, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(shelter),
-    })
-      .then((response) => {
-        response.json().then((data) => {
-          closeForm();
-          setNewData(!newData);
-        });
+    if (checkValidation(shelter)) {
+      fetch("http://127.0.0.1:5000/skloniste/" + shelter.id, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(shelter),
       })
-      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
+        .then((response) => {
+          response.json().then((data) => {
+            closeForm();
+            setNewData(!newData);
+          });
+        })
+        .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
+    }
   };
 
   const openForm = () => {
@@ -193,7 +212,6 @@ const ShelterHook = () => {
     openEditShelterForm,
     editPlaces,
     newData,
-    //
     abortNewShelter,
     formIsOpen,
     newPlaces,

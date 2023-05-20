@@ -49,6 +49,7 @@ function NewDetailForm(props) {
             type="text"
             value={spol}
             onChange={(e) => setSpol(e.target.value)}
+            placeholder="M/F"
           />
         </label>
         <label className="">
@@ -70,6 +71,7 @@ function NewDetailForm(props) {
             type="text"
             value={datum_rodenja}
             onChange={(e) => setDatumRodenja(e.target.value)}
+            placeholder="yyyy-mm-dd"
           />
         </label>
       </form>

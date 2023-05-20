@@ -18,7 +18,7 @@ const MDHook = () => {
   const [stanja, setStanja] = useState([]);
   const [novaStanja, setNovaStanja] = useState([]);
   const [editDetailFormIsOpen, setEditDetailFormIsOpen] = useState(false);
-  const [brojCipa, setBrojCipa] = useState();
+  const [brojCipa, setBrojCipa] = useState("");
   const [vrsta, setVrsta] = useState("");
   const [pasmina, setPasmina] = useState("");
   const [spol, setSpol] = useState("");
@@ -126,23 +126,25 @@ const MDHook = () => {
   };
 
   const addNewDetail = (detail) => {
-    fetch(
-      "http://127.0.0.1:5000/skloniste/" + detail.id_sklonista + "/zivotinja",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(detail),
-      }
-    )
-      .then((response) => {
-        response.json().then((data) => {
-          setUpdated(!updated);
-          setNewDetailFormIsOpen(false);
-        });
-      })
-      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
+    if (checkValidation(detail)) {
+      fetch(
+        "http://127.0.0.1:5000/skloniste/" + detail.id_sklonista + "/zivotinja",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(detail),
+        }
+      )
+        .then((response) => {
+          response.json().then((data) => {
+            setUpdated(!updated);
+            setNewDetailFormIsOpen(false);
+          });
+        })
+        .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
+    }
   };
 
   const abortEditShelter = () => {
@@ -204,20 +206,22 @@ const MDHook = () => {
   };
 
   const editDetail = (detail) => {
-    fetch("http://127.0.0.1:5000/zivotinja/" + detail.broj_cipa, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(detail),
-    })
-      .then((response) => {
-        response.json().then((data) => {
-          setEditDetailFormIsOpen(false);
-          setUpdated(!updated);
-        });
+    if (checkValidation(detail)) {
+      fetch("http://127.0.0.1:5000/zivotinja/" + detail.broj_cipa, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(detail),
       })
-      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
+        .then((response) => {
+          response.json().then((data) => {
+            setEditDetailFormIsOpen(false);
+            setUpdated(!updated);
+          });
+        })
+        .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
+    }
   };
 
   const deleteDetail = (id) => {
@@ -278,6 +282,50 @@ const MDHook = () => {
         }
       }
     }
+  }
+
+  function checkValidation(detail) {
+    let retValue = true;
+    if (detail.broj_cipa === "") {
+      alert("Morate unijeti broj čipa");
+      retValue = false;
+    } else if (detail.vrsta === "") {
+      alert("Morate unijeti vrstu");
+      retValue = false;
+    } else if (detail.pasmina === "") {
+      alert("Morate unijeti pasminu");
+      retValue = false;
+    } else if (detail.spol === "") {
+      alert("Morate unijeti spol");
+      retValue = false;
+    } else if (detail.id_stanja === "") {
+      alert("Morate odabrati stanje");
+      retValue = false;
+    } else if (detail.datum_rodenja === "") {
+      alert("Morate unijeti datum");
+      retValue = false;
+    } else if (
+      detail.spol.toUpperCase() !== "M" &&
+      detail.spol.toUpperCase() !== "F"
+    ) {
+      alert("Morate unijeti ispravan spol (M/F)");
+      retValue = false;
+    } else {
+      let dateString = detail.datum_rodenja;
+      var regEx = /^\d{4}-\d{2}-\d{2}$/;
+      if (!dateString.match(regEx)) {
+        retValue = false;
+        alert("Morate unijeti datum u ispravnom obliku - YYYY-MM-DD");
+      } else {
+        var d = new Date(dateString);
+        var dNum = d.getTime();
+        if (!dNum && dNum !== 0) {
+          retValue = false;
+          alert("Morate unijeti ispravan datum");
+        }
+      }
+    }
+    return retValue;
   }
 
   return {

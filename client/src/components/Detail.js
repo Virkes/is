@@ -5,7 +5,7 @@ function Detail(props) {
         <div>{props.data.broj_cipa}</div>
         <div>{props.data.vrsta}</div>
         <div>{props.data.pasmina}</div>
-        <div>{props.data.spol}</div>
+        <div>{props.data.spol.toUpperCase()}</div>
         <div>{props.data.stanje}</div>
         <div>{props.data.datum_rodenja}</div>
         <div className="actionBtnsContainer">
