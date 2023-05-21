@@ -9,6 +9,7 @@ function NewShelterForm(props) {
           Naziv skloništa
           <input
             type="text"
+            name="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -17,13 +18,18 @@ function NewShelterForm(props) {
           Adresa skloništa
           <input
             type="text"
+            name="address"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           />
         </label>
         <label>
           Mjesto skloništa
-          <select value={place} onChange={(e) => setPlace(e.target.value)}>
+          <select
+            name="place"
+            value={place}
+            onChange={(e) => setPlace(e.target.value)}
+          >
             <option key={0} value={0}>
               Odaberite mjesto
             </option>

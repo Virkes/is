@@ -3,9 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 
 const MDHook = () => {
   const navigate = useNavigate();
-  const [name, setName] = useState("");
-  const [address, setAddress] = useState("");
-  const [place, setPlace] = useState("");
   const [editFormIsOpen, setEditFormIsOpen] = useState(false);
   const [editPlaces, setEditPlaces] = useState([]);
 
@@ -109,22 +106,6 @@ const MDHook = () => {
     setEditFormIsOpen(false);
   };
 
-  const addNewShelter = (shelter) => {
-    fetch("http://127.0.0.1:5000/skloniste", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(shelter),
-    })
-      .then((response) => {
-        response.json().then((data) => {
-          console.log(data);
-        });
-      })
-      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
-  };
-
   const addNewDetail = (detail) => {
     if (checkValidation(detail)) {
       fetch(
@@ -157,22 +138,6 @@ const MDHook = () => {
 
   const abortNewDetail = () => {
     setNewDetailFormIsOpen(false);
-  };
-
-  const editShelter = (shelter) => {
-    fetch("http://127.0.0.1:5000/skloniste/" + shelter.id, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(shelter),
-    })
-      .then((response) => {
-        response.json().then((data) => {
-          closeForm();
-        });
-      })
-      .catch((error) => alert("Došlo je do pogreške pri obradi zahtjeva"));
   };
 
   const openEditDetailForm = (id) => {
@@ -332,17 +297,8 @@ const MDHook = () => {
   }
 
   return {
-    address,
-    setAddress,
-    name,
-    setName,
-    addNewShelter,
     abortEditShelter,
-    place,
-    setPlace,
     editFormIsOpen,
-    closeForm,
-    editShelter,
     editPlaces,
     openEditMasterForm,
     master,

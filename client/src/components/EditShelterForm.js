@@ -41,9 +41,6 @@ function EditShelterForm(props) {
             value={place}
             onChange={(e) => setPlace(e.target.value)}
           >
-            {/* <option key={0} value={0}>
-              {props.data.naziv_mjesta}
-            </option> */}
             {props.places.map((place) => (
               <option key={place.id} value={place.id}>
                 {place.naziv}

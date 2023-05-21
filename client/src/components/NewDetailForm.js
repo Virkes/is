@@ -23,6 +23,7 @@ function NewDetailForm(props) {
           Broj čipa
           <input
             type="number"
+            name="cip"
             value={brojCipa}
             onChange={(e) => setBrojCipa(e.target.value)}
           />
@@ -31,6 +32,7 @@ function NewDetailForm(props) {
           Vrsta
           <input
             type="text"
+            name="vrsta"
             value={vrsta}
             onChange={(e) => setVrsta(e.target.value)}
           />
@@ -39,6 +41,7 @@ function NewDetailForm(props) {
           Pasmina
           <input
             type="text"
+            name="pasmina"
             value={pasmina}
             onChange={(e) => setPasmina(e.target.value)}
           />
@@ -47,6 +50,7 @@ function NewDetailForm(props) {
           Spol
           <input
             type="text"
+            name="spol"
             value={spol}
             onChange={(e) => setSpol(e.target.value)}
             placeholder="M/F"
@@ -54,7 +58,11 @@ function NewDetailForm(props) {
         </label>
         <label className="">
           Stanje
-          <select value={stanje} onChange={(e) => setStanje(e.target.value)}>
+          <select
+            name="stanje"
+            value={stanje}
+            onChange={(e) => setStanje(e.target.value)}
+          >
             <option key={0} value={0}>
               Odaberite stanje
             </option>
@@ -69,6 +77,7 @@ function NewDetailForm(props) {
           Datum
           <input
             type="text"
+            name="datum"
             value={datum_rodenja}
             onChange={(e) => setDatumRodenja(e.target.value)}
             placeholder="yyyy-mm-dd"

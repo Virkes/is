@@ -32,6 +32,7 @@ function EditDetailForm(props) {
         <label>
           Vrsta
           <input
+            name="vrsta"
             type="text"
             value={vrsta}
             onChange={(e) => setVrsta(e.target.value)}
@@ -40,6 +41,7 @@ function EditDetailForm(props) {
         <label>
           Pasmina
           <input
+            name="pasmina"
             type="text"
             value={pasmina}
             onChange={(e) => setPasmina(e.target.value)}
@@ -48,6 +50,7 @@ function EditDetailForm(props) {
         <label>
           Spol
           <input
+            name="spol"
             type="text"
             value={spol}
             onChange={(e) => setSpol(e.target.value)}
@@ -55,7 +58,11 @@ function EditDetailForm(props) {
         </label>
         <label>
           Stanje
-          <select value={stanje} onChange={(e) => setStanje(e.target.value)}>
+          <select
+            name="stanje"
+            value={stanje}
+            onChange={(e) => setStanje(e.target.value)}
+          >
             {/* <option key={0} value={0}>
               {props.data.naziv_mjesta}
             </option> */}
@@ -70,6 +77,7 @@ function EditDetailForm(props) {
           Datum
           <input
             type="text"
+            name="datum"
             value={datum_rodenja}
             onChange={(e) => setDatumRodenja(e.target.value)}
           />
