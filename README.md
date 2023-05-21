@@ -19,5 +19,9 @@ Pre-requisites
 
 Koraci za pokretanje
 
-1. U client folderu izvršit naredbu _npm install_ kako bi se instalirali svi potrebni paketi iz package.json datoteke
-2. U client folderu izvršit naredbu _npm start_ za pokretanje frontend dijela aplikacije
+1. U client folderu izvršiti naredbu _npm install_ kako bi se instalirali svi potrebni paketi iz package.json datoteke
+2. U client folderu izvršiti naredbu _npm start_ za pokretanje frontend dijela aplikacije
+
+Testiranje
+
+1. U client folderu izvršiti naredbu _npm test_ za pokretanje testova
