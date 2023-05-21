@@ -16,6 +16,8 @@ function EditShelterForm(props) {
         <label>
           Naziv skloništa
           <input
+            data-testid="nameInput"
+            name="name"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -24,6 +26,8 @@ function EditShelterForm(props) {
         <label>
           Adresa skloništa
           <input
+            data-testid="addressInput"
+            name="address"
             type="text"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
@@ -31,7 +35,12 @@ function EditShelterForm(props) {
         </label>
         <label>
           Mjesto skloništa
-          <select value={place} onChange={(e) => setPlace(e.target.value)}>
+          <select
+            data-testid="placeInput"
+            name="place"
+            value={place}
+            onChange={(e) => setPlace(e.target.value)}
+          >
             {/* <option key={0} value={0}>
               {props.data.naziv_mjesta}
             </option> */}
